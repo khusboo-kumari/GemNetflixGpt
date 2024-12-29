@@ -27,7 +27,9 @@
 - Update Store with Trailer video data . 
 - Embedded the Youtube video and make it autplay and mute . 
 - Tailwind Classes . 
-
+- Build Secondary Component . 
+- Build Movie List 
+- Build Movie Card 
 
 
 
