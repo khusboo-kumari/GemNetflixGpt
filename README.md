@@ -30,6 +30,12 @@
 - Build Secondary Component . 
 - Build Movie List 
 - Build Movie Card 
+- TMDB Image CDN URL 
+- usePopularMovies Custom hook, and similary for popular movies, top rated and upComing Movies . 
+- GPT Search Page
+- GPT Search Bar 
+-(***)(BONUS) Multi-language Feature in our App  
+
 
 
 

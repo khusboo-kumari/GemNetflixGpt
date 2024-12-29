@@ -8,7 +8,7 @@ import { auth } from '../utils/firebase';
 // import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { photoURL } from '../utils/constant';
+import { BG_URL, photoURL } from '../utils/constant';
 
 
 
@@ -92,7 +92,7 @@ const Login = () => {
     <div>
       <Header />
       <div className='absolute'>
-        <img src='https://assets.nflxext.com/ffe/siteui/vlv3/150c4b42-11f6-4576-a00f-c631308b1e43/web/IN-en-20241216-TRIFECTA-perspective_915a9055-68ad-4e81-b19a-442f1cd134dc_large.jpg' />
+        <img src={BG_URL}/>
       </div>
 
       <form onSubmit={(e) => e.preventDefault()} className='absolute p-12 w-3/12 bg-black bg-opacity-80     my-36 mx-auto right-0 left-0 text-white rounded-lg'>
@@ -100,7 +100,7 @@ const Login = () => {
         {!signIn && (
           <input ref={name} type='text' placeholder='Full Name' className='p-4 my-4 w-full bg-gray-800' />
         )}
-        <input ref={email} type='text' placeholder='Email or mobile number' className='p-4 my-4  w-full bg-gray-800' />
+        <input ref={email} type='text' placeholder='Enter your Email ' className='p-4 my-4  w-full bg-gray-800' />
         <input ref={password} type='password' placeholder='Password' className='p-4 my-4  w-full bg-gray-800 ' />
         <p className='text-red-600 font-bold text-lg py-2'>{errorMsg}</p>
         <button type='submit' className='  p-3 my-2 bg-red-700  w-full rounded-lg' onClick={handleButtonClick}>{signIn ? "SignIn" : "Sign Up"}</button>
