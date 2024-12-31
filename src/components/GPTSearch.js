@@ -1,4 +1,3 @@
-import React from 'react'
 import GPTEngineBar from './GPTEngineBar'
 import GPTMovieSuggest from './GPTMovieSuggest'
 import { BG_URL } from '../utils/constant'
