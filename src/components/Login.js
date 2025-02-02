@@ -89,26 +89,72 @@ const Login = () => {
     setSignIn(!signIn);
   }
   return (
+    // <div>
+    //   <Header />
+    //   <div className='absolute'>
+    //     <img src={BG_URL}/>
+    //   </div>
+
+    //   <form onSubmit={(e) => e.preventDefault()} className='absolute p-12 w-3/12 bg-black bg-opacity-80     my-36 mx-auto right-0 left-0 text-white rounded-lg'>
+    //     <h1 className='font-bold text-3xl py-4'>{signIn ? "Sign In" : "Sign Up"}</h1>
+    //     {!signIn && (
+    //       <input ref={name} type='text' placeholder='Full Name' className='p-4 my-4 w-full bg-gray-800' />
+    //     )}
+    //     <input ref={email} type='text' placeholder='Enter your Email ' className='p-4 my-4  w-full bg-gray-800' />
+    //     <input ref={password} type='password' placeholder='Password' className='p-4 my-4  w-full bg-gray-800 ' />
+    //     <p className='text-red-600 font-bold text-lg py-2'>{errorMsg}</p>
+    //     <button type='submit' className='  p-3 my-2 bg-red-700  w-full rounded-lg' onClick={handleButtonClick}>{signIn ? "SignIn" : "Sign Up"}</button>
+    //     <p className='text-white py-4' onClick={toggleSignInForm}>{!signIn ? "New to Netflix?  Sign up Now." : "Already a user ? Sign In"}</p>
+
+    //   </form> 
+
+    // </div>
+
+    //  DEEPSEEK 
     <div>
-      <Header />
-      <div className='absolute'>
-        <img src={BG_URL}/>
-      </div>
-
-      <form onSubmit={(e) => e.preventDefault()} className='absolute p-12 w-3/12 bg-black bg-opacity-80     my-36 mx-auto right-0 left-0 text-white rounded-lg'>
-        <h1 className='font-bold text-3xl py-4'>{signIn ? "Sign In" : "Sign Up"}</h1>
-        {!signIn && (
-          <input ref={name} type='text' placeholder='Full Name' className='p-4 my-4 w-full bg-gray-800' />
-        )}
-        <input ref={email} type='text' placeholder='Enter your Email ' className='p-4 my-4  w-full bg-gray-800' />
-        <input ref={password} type='password' placeholder='Password' className='p-4 my-4  w-full bg-gray-800 ' />
-        <p className='text-red-600 font-bold text-lg py-2'>{errorMsg}</p>
-        <button type='submit' className='  p-3 my-2 bg-red-700  w-full rounded-lg' onClick={handleButtonClick}>{signIn ? "SignIn" : "Sign Up"}</button>
-        <p className='text-white py-4' onClick={toggleSignInForm}>{!signIn ? "New to Netflix?  Sign up Now." : "Already a user ? Sign In"}</p>
-
-      </form>
-
+    <Header />
+    <div className='absolute inset-0'>
+      <img src={BG_URL} alt="background" className='w-full h-full object-cover' /> {/* Responsive background image */}
     </div>
+
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      className='absolute p-4 sm:p-6 md:p-12 w-full max-w-md bg-black bg-opacity-80 my-8 sm:my-16 md:my-36 mx-auto right-0 left-0 text-white rounded-lg' // Responsive padding and width
+    >
+      <h1 className='font-bold text-2xl sm:text-3xl py-4'>{signIn ? "Sign In" : "Sign Up"}</h1>
+      {!signIn && (
+        <input
+          ref={name}
+          type='text'
+          placeholder='Full Name'
+          className='p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-800 rounded'
+        />
+      )}
+      <input
+        ref={email}
+        type='text'
+        placeholder='Enter your Email'
+        className='p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-800 rounded'
+      />
+      <input
+        ref={password}
+        type='password'
+        placeholder='Password'
+        className='p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-800 rounded'
+      />
+      <p className='text-red-600 font-bold text-lg py-2'>{errorMsg}</p>
+      <button
+        type='submit'
+        className='p-3 my-2 bg-red-700 w-full rounded-lg hover:bg-red-800 transition-colors'
+        onClick={handleButtonClick}
+      >
+        {signIn ? "Sign In" : "Sign Up"}
+      </button>
+      <p className='text-white py-4 cursor-pointer' onClick={toggleSignInForm}>
+        {!signIn ? "New to Netflix? Sign up Now." : "Already a user? Sign In"}
+      </p>
+    </form>
+  </div>
   )
 }
 
